@@ -42,6 +42,21 @@ require_once(asConfig::$filePath . 'system/core/core.session.php');
 
 if (asConfig::$debugMode == true || FORCE_DEBUG == true) 
 {
-
+    error_reporting(E_ALL);
+    require_once('core.debug.php');
+    require_once($GLOBALS['system'] . 'lib/php-console-master/src/PhpConsole/__autoload.php');
+    $connector = PhpConsole\Connector::getInstance();
+    $handler = PhpConsole\Handler::getInstance();
+    /* You can override default Handler behavior:
+        $handler->setHandleErrors(false);  // disable errors handling
+        $handler->setHandleExceptions(false); // disable exceptions handling
+        $handler->setCallOldHandlers(false); // disable passing errors & exceptions to prviously defined handlers
+    */
+    $handler->start(); // initialize handlers
+    PhpConsole\Helper::register();
+    
+    function dBug($var, $tags = null) {
+        PhpConsole\Connector::getInstance()->getDebugDispatcher()->dispatchDebug($var, $tags, 1);
+    }
 }
 ?>
