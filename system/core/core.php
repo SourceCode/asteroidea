@@ -27,8 +27,21 @@ $GLOBALS['filePath'] = str_replace('\system\core', '', dirname(__FILE__));
 $GLOBALS['webPath'] = $_SERVER['REQUEST_URI'];
 $GLOBALS['system'] = $GLOBALS['filePath'] . '/system/';
 
+/**
+* Core Includes
+* 
+* @var core globals
+*/
 require_once($GLOBALS['system'] . 'traits/trait.singleton.php');
 require_once($GLOBALS['system'] . 'config.system.php');
+require_once(asConfig::$filePath . 'system/lib/htmlpurifier-4.6.0-lite/library/HTMLPurifier.auto.php');
+require_once(asConfig::$filePath . 'system/core/core.mysqli.php');
+require_once(asConfig::$filePath . 'system/core/core.log.php');
+require_once(asConfig::$filePath . 'system/core/core.session.php');
 
 
+if (asConfig::$debugMode == true || FORCE_DEBUG == true) 
+{
+
+}
 ?>
