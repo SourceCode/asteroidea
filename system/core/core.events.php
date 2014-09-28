@@ -130,7 +130,7 @@ class asEvent
 
 class asEventHandler
 {
- 
+    
  
 }
 
