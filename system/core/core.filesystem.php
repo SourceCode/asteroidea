@@ -9,9 +9,8 @@
  */
  
 /**
- * @access public
- * @var object core filesystem handler
- * @category objects
+ * Primary class for handling filesystem paths
+ * 
  */
 class asFilesystem
 {

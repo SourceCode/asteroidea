@@ -12,8 +12,6 @@
  * Primary class for events in the system.  Can take an event name, the target that created the event
  * and an optional set of data to be passed during the event callback
  * 
- *
- * @package Cake.Event
  */
 class asEvent
 {
